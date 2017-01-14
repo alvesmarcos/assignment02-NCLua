@@ -37,14 +37,16 @@
 		<media id="textTemperaturePOA" src="../media/poa.txt" descriptor="dTextTemperaturePOA"/>
 		<media id="textTemperatureJPA" src="../media/jpa.txt" descriptor="dTextTemperatureJPA"/>
 		
-		<!-- CURSOR RIGHT -->
+		<!-- CURSOR BLUE -->
 		<link xconnector="baseConnectors#onSelectionStartStop">
 			<bind role="onSelection" component="imageInfo">
-				<bindParam name="vKey" value="CURSOR_RIGHT"/>
+				<bindParam name="vKey" value="BLUE"/>
 			</bind>
 			<bind role="start" component="textTemperatureGRU"/>
 			<bind role="stop" component="imageInfo"/>
 		</link>
+		
+		<!-- CURSOR RIGHT -->
 		<link xconnector="baseConnectors#onSelectionStartStop">
 			<bind role="onSelection" component="textTemperatureGRU">
 				<bindParam name="vKey" value="CURSOR_RIGHT"/>
