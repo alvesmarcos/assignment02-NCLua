@@ -10,7 +10,7 @@
 					<simpleAction role="stop"/>
 				</compoundAction>
 			</causalConnector>
-			<causalConnector id="onSelectionStartStop">
+			<causalConnector id="onKeySelectionStartStop">
 				<connectorParam name="vKey"/>
 				<simpleCondition role="onSelection" key="$vKey"/>
 				<compoundAction operator="par">
@@ -18,7 +18,7 @@
 					<simpleAction role="stop"/>
 				</compoundAction>
 			</causalConnector>
-			<causalConnector id="onSelectionStartNStop">
+			<causalConnector id="onKeySelectionStartNStop">
 				<connectorParam name="vKey"/>
 				<simpleCondition role="onSelection" key="$vKey"/>
 				<compoundAction operator="par">
@@ -26,7 +26,7 @@
 					<simpleAction role="stop"/>
 				</compoundAction>
 			</causalConnector>
-			<causalConnector id="onSelectionStartStopN">
+			<causalConnector id="onKeySelectionStartStopN">
 				<connectorParam name="vKey"/>
 				<simpleCondition role="onSelection" key="$vKey"/>
 				<compoundAction operator="par">
@@ -34,7 +34,7 @@
 					<simpleAction role="stop" max="unbounded" qualifier="par"/>
 				</compoundAction>
 			</causalConnector>
-			<causalConnector id="onSelectionStartNStopN">
+			<causalConnector id="onKeySelectionStartNStopN">
 				<connectorParam name="vKey"/>
 				<simpleCondition role="onSelection" key="$vKey"/>
 				<compoundAction operator="par">
@@ -46,6 +46,13 @@
 				<simpleCondition role="onEnd"/>
 				<simpleAction role="stop" max="unbounded" qualifier="par"/>
 			</causalConnector>
+			<causalConnector id="onSelectionStartStopN">
+				<simpleCondition role="onSelection"/>
+				<compoundAction operator="par">
+					<simpleAction role="start"/>
+					<simpleAction role="stop" max="unbounded" qualifier="par"/>
+				</compoundAction>
+		</causalConnector>
 		</connectorBase>
 	</head>
 </ncl>
