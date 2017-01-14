@@ -10,6 +10,14 @@
 					<simpleAction role="stop"/>
 				</compoundAction>
 			</causalConnector>
+			<causalConnector id="onSelectionStartStop">
+				<connectorParam name="vKey"/>
+				<simpleCondition role="onSelection" key="$vKey"/>
+				<compoundAction operator="par">
+					<simpleAction role="start"/>
+					<simpleAction role="stop"/>
+				</compoundAction>
+			</causalConnector>
 		</connectorBase>
 	</head>
 </ncl>
