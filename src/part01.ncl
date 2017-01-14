@@ -34,6 +34,7 @@
 			<area id="aImageGRU" begin="10s" end="15s"/>
 			<area id="aImagePOA" begin="15s" end="20s"/>
 			<area id="aImageJPA" begin="20s" end="25s"/>
+			<area id="aImageInfo" begin="25s"/>
 		</media>
 			
 		<media id="imageInfo" src="../media/info_icon.png" descriptor="dImageInfo"/>
@@ -57,7 +58,7 @@
 			<bind role="stop" component="textTemperaturePOA"/>
 		</link> 
 		<link xconnector="baseConnectors#onBeginStartStop">
-			<bind role="onBegin" component="textTemperatureJPA"/>
+			<bind role="onBegin" component="video" interface="aImageInfo"/>
 			<bind role="start" component="imageInfo"/>
 			<bind role="stop" component="textTemperatureJPA"/>
 		</link>
