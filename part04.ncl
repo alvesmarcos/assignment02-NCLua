@@ -69,7 +69,7 @@
 		<!-- CURSOR BLUE -->
 		<link xconnector="baseConnectors#onKeySelectionStartNStop">
 			<bind role="onSelection" component="imageInfo">
-				<bindParam name="vKey" value="5"/>
+				<bindParam name="vKey" value="BLUE"/>
 			</bind>
 			<bind role="start" component="imageMenu"/>
 			<bind role="start" component="menuItem3"/>
@@ -111,10 +111,10 @@
 			<bind role="stop" component="textTemperatureJPA"/>
 		</link>
 		
-			<!-- CURSOR 2 -->
+			<!-- CURSOR RED -->
 		<link xconnector="baseConnectors#onKeySelectionStartStopN">
 			<bind role="onSelection" component="imageMenu">
-				<bindParam name="vKey" value="2"/>
+				<bindParam name="vKey" value="RED"/>
 			</bind>
 			<bind role="start" component="imageInfo"/>
 			<bind role="stop" component="imageMenu"/>

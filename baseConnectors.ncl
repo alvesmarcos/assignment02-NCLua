@@ -16,6 +16,11 @@
 				<simpleAction role="start"/>
 			</causalConnector>	
 			
+			<causalConnector id="onBeginStartN">
+				<simpleCondition role="onBegin"/>
+				<simpleAction role="start" max="unbounded" qualifier="par"/>
+			</causalConnector>	
+			
 			<causalConnector id="onBeginStop">
 				<simpleCondition role="onBegin"/>
 				<simpleAction role="start"/>
@@ -56,6 +61,25 @@
 					<simpleAction role="stop" max="unbounded" qualifier="par"/>
 				</compoundAction>
 			</causalConnector>
+			
+			<causalConnector id="onSelectionStartNStopN">
+				<simpleCondition role="onSelection"/>
+				<compoundAction operator="par">
+					<simpleAction role="start" max="unbounded" qualifier="par"/>
+					<simpleAction role="stop" max="unbounded" qualifier="par"/>
+				</compoundAction>
+			</causalConnector>
+			
+			<causalConnector id="onSelectionStartNStopNSet">
+				<connectorParam name="var"/>
+				<simpleCondition role="onSelection"/>
+				<compoundAction operator="seq">
+					<simpleAction role="start" max="unbounded" qualifier="par"/>
+					<simpleAction role="stop" max="unbounded" qualifier="par"/>
+					<simpleAction role="set" value="$var"/>
+				</compoundAction>
+			</causalConnector>
+			
 			
 			<causalConnector id="onEndStopN">
 				<simpleCondition role="onEnd"/>
@@ -157,6 +181,12 @@
 					<simpleAction role="start"/>
 					<simpleAction role="set" value="$var"/>
 				</compoundAction>
+			</causalConnector>
+			
+			<causalConnector id="onEndAttributionSet">
+				<connectorParam name="value"/>
+				<simpleCondition role="onEndAttribution"/>
+				<simpleAction role="set" value="$value"/>
 			</causalConnector>
 		</connectorBase>
 	</head>
