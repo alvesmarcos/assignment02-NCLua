@@ -9,7 +9,18 @@
 					<simpleAction role="start"/>
 					<simpleAction role="stop"/>
 				</compoundAction>
-			</causalConnector>
+			</causalConnector>		
+			
+			<causalConnector id="onBeginStart">
+				<simpleCondition role="onBegin"/>
+				<simpleAction role="start"/>
+			</causalConnector>	
+			
+			<causalConnector id="onBeginStop">
+				<simpleCondition role="onBegin"/>
+				<simpleAction role="start"/>
+			</causalConnector>	
+			
 			<causalConnector id="onKeySelectionStartStop">
 				<connectorParam name="vKey"/>
 				<simpleCondition role="onSelection" key="$vKey"/>
@@ -18,6 +29,7 @@
 					<simpleAction role="stop"/>
 				</compoundAction>
 			</causalConnector>
+			
 			<causalConnector id="onKeySelectionStartNStop">
 				<connectorParam name="vKey"/>
 				<simpleCondition role="onSelection" key="$vKey"/>
@@ -26,6 +38,7 @@
 					<simpleAction role="stop"/>
 				</compoundAction>
 			</causalConnector>
+			
 			<causalConnector id="onKeySelectionStartStopN">
 				<connectorParam name="vKey"/>
 				<simpleCondition role="onSelection" key="$vKey"/>
@@ -34,6 +47,7 @@
 					<simpleAction role="stop" max="unbounded" qualifier="par"/>
 				</compoundAction>
 			</causalConnector>
+			
 			<causalConnector id="onKeySelectionStartNStopN">
 				<connectorParam name="vKey"/>
 				<simpleCondition role="onSelection" key="$vKey"/>
@@ -42,17 +56,108 @@
 					<simpleAction role="stop" max="unbounded" qualifier="par"/>
 				</compoundAction>
 			</causalConnector>
+			
 			<causalConnector id="onEndStopN">
 				<simpleCondition role="onEnd"/>
 				<simpleAction role="stop" max="unbounded" qualifier="par"/>
 			</causalConnector>
+			
 			<causalConnector id="onSelectionStartStopN">
 				<simpleCondition role="onSelection"/>
 				<compoundAction operator="par">
 					<simpleAction role="start"/>
 					<simpleAction role="stop" max="unbounded" qualifier="par"/>
 				</compoundAction>
-		</causalConnector>
+			</causalConnector>
+			
+			<causalConnector id="onKeySelectionSetStartStop">
+				<connectorParam name="vKey"/>
+				<connectorParam name="var"/>
+				<simpleCondition role="onSelection" key="$vKey"/>
+				<compoundAction operator="par">
+					<simpleAction role="start"/>
+					<simpleAction role="set" value="$var"/>
+					<simpleAction role="stop"/>
+				</compoundAction>
+			</causalConnector>
+			
+			<causalConnector id="onKeySelectionSetStartNStopN">
+				<connectorParam name="vKey"/>
+				<connectorParam name="var"/>
+				<simpleCondition role="onSelection" key="$vKey"/>
+				<compoundAction operator="par">
+					<simpleAction role="start" max="unbounded" qualifier="par"/>
+					<simpleAction role="set" value="$var"/>
+					<simpleAction role="stop" max="unbounded" qualifier="par"/>
+				</compoundAction>
+			</causalConnector>
+			
+			<causalConnector id="onKeySelectionStopNStartNSet">
+				<connectorParam name="vKey"/>
+				<connectorParam name="var"/>
+				<simpleCondition role="onSelection" key="$vKey"/>
+				<compoundAction operator="seq">
+					<simpleAction role="start" max="unbounded" qualifier="par"/>
+					<simpleAction role="stop" max="unbounded" qualifier="par"/>
+					<simpleAction role="set" value="$var" max="unbounded" qualifier="par"/>
+				</compoundAction>
+			</causalConnector>
+			
+			<causalConnector id="onKeySelectionSet">
+				<connectorParam name="vKey"/>
+				<connectorParam name="var"/>
+				<simpleCondition role="onSelection" key="$vKey"/>
+				<compoundAction operator="seq">
+					<simpleAction role="set" value="$var" max="unbounded" qualifier="par"/>
+				</compoundAction>
+			</causalConnector>
+			
+			<causalConnector id="onKeySelectionStartSet">
+				<connectorParam name="vKey"/>
+				<connectorParam name="var"/>
+				<simpleCondition role="onSelection" key="$vKey"/>
+				<compoundAction operator="seq">
+					<simpleAction role="start"/>
+					<simpleAction role="set" value="$var" max="unbounded" qualifier="par"/>
+				</compoundAction>
+			</causalConnector>
+			
+			<causalConnector id="onKeySelectionStop">
+				<connectorParam name="vKey"/>
+				<simpleCondition role="onSelection" key="$vKey"/>
+				<compoundAction operator="seq">
+					<simpleAction role="stop"/>
+				</compoundAction>
+			</causalConnector>
+			
+			<causalConnector id="onEndAttributionStartStop">
+				<simpleCondition role="onEndAttribution"/>
+				<compoundAction operator="seq">
+					<simpleAction role="start" />
+					<simpleAction role="stop"/>
+				</compoundAction>
+			</causalConnector>
+			
+			<causalConnector id="onSelectionStopNStartNSet">
+				<connectorParam name="vKey"/>
+				<connectorParam name="var"/>
+				<simpleCondition role="onSelection" key="$vKey"/>
+				<compoundAction operator="seq">
+					<simpleAction role="start" max="unbounded" qualifier="par"/>
+					<simpleAction role="stop" max="unbounded" qualifier="par"/>
+					<simpleAction role="set" value="$var" max="unbounded" qualifier="par"/>
+				</compoundAction>
+			</causalConnector>
+	
+			<causalConnector id="onBeginStopStartSet">
+				<connectorParam name="var"/>
+				<simpleCondition role="onBegin"/>
+				<compoundAction operator="seq">
+					<simpleAction role="stop" />
+					<simpleAction role="start"/>
+					<simpleAction role="set" value="$var"/>
+				</compoundAction>
+			</causalConnector>
 		</connectorBase>
 	</head>
 </ncl>
