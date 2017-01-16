@@ -14,6 +14,7 @@
 				<region id="rgTextTemperature" top="2%" left="80%" zIndex="3"/>
 			</region>
 		</regionBase>
+		
 		<descriptorBase>
 			<descriptor id="dVideo" region="rgVideo"/>
 			<descriptor id="dImageInfo" region="rgImageInfo"/>
@@ -47,6 +48,7 @@
 						focusSrc="media/imageSelectedMenuJPA.png"
 						/>
 		</descriptorBase>
+		
 		<connectorBase>
 			<importBase documentURI="baseConnectors.ncl" alias="baseConnectors"/>
 		</connectorBase>

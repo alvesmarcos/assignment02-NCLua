@@ -9,6 +9,7 @@
 				<region id="rgTextTemperature" top="2%" left="80%" zIndex="2"/>
 			</region>
 		</regionBase>
+		
 		<descriptorBase>
 			<descriptor id="dVideo" region="rgVideo"/>
 			<descriptor id="dImageInfo" region="rgImageInfo"/>
@@ -22,6 +23,7 @@
 				<descriptorParam name="fontSize" value="30"/>
 			</descriptor>
 		</descriptorBase>
+		
 		<connectorBase>
 			<importBase documentURI="baseConnectors.ncl" alias="baseConnectors"/>
 		</connectorBase>

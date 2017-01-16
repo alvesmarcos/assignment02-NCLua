@@ -10,6 +10,7 @@
 				<region id="rgIconTemperature" top="11%" left="82%" width="16%" height="16%" zIndex="2"/>
 			</region>
 		</regionBase>
+		
 		<descriptorBase>
 			<descriptor id="dVideo" region="rgVideo"/>
 			<descriptor id="dImageInfo" region="rgImageInfo"/>
@@ -25,6 +26,7 @@
 			
 			<descriptor id="dIconTemperature" region="rgIconTemperature"/>
 		</descriptorBase>
+		
 		<connectorBase>
 			<importBase documentURI="baseConnectors.ncl" alias="baseConnectors"/>
 		</connectorBase>

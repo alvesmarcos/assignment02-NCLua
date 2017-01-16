@@ -14,6 +14,7 @@
 				<region id="rgTextTemperature" top="2%" left="80%" zIndex="3"/>
 			</region>
 		</regionBase>
+		
 		<descriptorBase>
 			<descriptor id="dVideo" region="rgVideo"/>
 			<descriptor id="dImageInfo" region="rgImageInfo"/>
@@ -41,6 +42,7 @@
 						focusSrc="media/imageSelectedMenuJPA.png"
 						/>
 		</descriptorBase>
+		
 		<connectorBase>
 			<importBase documentURI="baseConnectors.ncl" alias="baseConnectors"/>
 		</connectorBase>
@@ -64,7 +66,7 @@
 		<!-- CURSOR BLUE -->
 		<link xconnector="baseConnectors#onKeySelectionStartNStop">
 			<bind role="onSelection" component="imageInfo">
-				<bindParam name="vKey" value="5"/>
+				<bindParam name="vKey" value="BLUE"/>
 			</bind>
 			<bind role="start" component="imageMenu"/>
 			<bind role="start" component="menuItem3"/>

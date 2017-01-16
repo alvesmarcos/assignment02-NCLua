@@ -9,8 +9,6 @@ bgcolor = 'black'
 
 PROPRIEDADE_NOME = 'mensagem'
 
-local URL = "http://sdcufpb.com.br/wp-content/uploads/2017/01/gru.txt"
-
 function handler (e)
 
 	if e.class == 'ncl' and e.type == 'attribution' then
